@@ -1,0 +1,4 @@
+Įveskite sveikąjį skaičių N. Įveskite N sveikųjų skaičių a1, a2, a3,…, aN. Programa turėtų:
+A) rasti minimalų ir maksimalų elementą masyve.
+B) Apskaičiuoti, kiek yra skaičių lygių maksimumui ir kiek minimumui.
+C) Ekrane ir išvesti elementus, kurie lieka pašalinus visus lygius minimumui ir maksimumui.

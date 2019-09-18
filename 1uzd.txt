@@ -1,0 +1,8 @@
+Parašykite programą, kuri sukurtų dvimatį masyvą (jo dydis ir elementai įvedami ranka).
+Programa turėtų rasti dvimačio masyvo A pagrindinės įstrižainės mažiausią narį X ir sukurti
+simbolių masyvą B, kuriame būtų saugoma raidė D tais atvejais,
+jei atitinkamoje A masyvo pozicijoje esantis elementas yra didesnis už rastą X reikšmę,
+M, jei mažesnis už rastą X reikšmę ir L, jei lygus.
+PVZ.: sukūrus masyvą 4 9 7 programa turi grąžinti tokį B masyvą : D D D
+                     5 8 1                                        D D M
+                     3 2 3                                        L M L

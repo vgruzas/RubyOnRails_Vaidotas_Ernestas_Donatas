@@ -1,0 +1,4 @@
+Parašykite programą, kuri, įvedus trijų kraštinių ilgius, nustatytų,
+ar iš jų galima sudaryti trikampį. Jei toks trikampis egzistuoja,
+reikėtų apskaičiuoti trikampio plotą ir nustatyti, ar jis yra lygiašonis,
+ar lygiakraštis ar įvairiakraštis.
