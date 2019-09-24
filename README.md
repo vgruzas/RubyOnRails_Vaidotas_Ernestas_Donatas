@@ -1,1 +1,1 @@
-# RubyOnRails_Vaidotas_Ernestas_Dominykas_Donatas
+# RubyOnRails_Vaidotas_Ernestas_Donatas
