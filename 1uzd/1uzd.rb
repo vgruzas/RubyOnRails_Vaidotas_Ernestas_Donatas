@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 puts 'Iveskite dvimacio masyvo eiluciu skaiciu:'
 size = gets.chomp.to_i
 array = Array.new(size) { Array.new(size) }

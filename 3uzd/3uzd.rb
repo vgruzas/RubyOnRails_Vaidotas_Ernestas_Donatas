@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cmath'
 def triangle(one, two, three)
   valid_triangle?(one, two, three)

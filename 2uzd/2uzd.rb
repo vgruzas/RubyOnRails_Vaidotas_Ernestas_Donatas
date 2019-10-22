@@ -1,23 +1,31 @@
-puts "Iveskite masyvo elementu kieki:"
-n = gets.chomp.to_i
-array = Array.new(n)
-puts "Iveskite masyvo elementus: "
-n.times do |i|
-  array[i] = gets.chomp.to_i
+# frozen_string_literal: true
+
+# This is class for second task. Naming bad. Ik.
+class Uzd
+  attr_accessor :array
+
+  def initialize(array)
+    @array = array
+  end
+
+  def min_value
+    array.min
+  end
+
+  def max_value
+    array.max
+  end
+
+  def min_value_count
+    array.count(min_value)
+  end
+
+  def max_value_count
+    array.count(max_value)
+  end
+
+  def delete_all_min_max
+    array.delete(min_value)
+    array.delete(max_value)
+  end
 end
-
-
-min = array.min
-max = array.max
-
-puts  " A) Min:" + min.to_s
-puts "Max: " + max.to_s
-
-puts " B) Kiekis lygus min: " + array.count(min).to_s
-puts "Kiekis lygus max: " + array.count(max).to_s
-
-puts " C) Visi like elementai be max ir min: "
-
-array.delete(min)
-array.delete(max)
-array.each { |i| print "#{i} " }
