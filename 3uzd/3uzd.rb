@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+#Testas
 class Uzd3
   attr_accessor :one
   attr_accessor :two

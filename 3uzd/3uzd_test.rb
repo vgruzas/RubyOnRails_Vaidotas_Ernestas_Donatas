@@ -23,5 +23,5 @@ class MyTest < Test::Unit::TestCase
     assert_equal("Ivairiakrastis", uzd3.which_triangle)
     uzd3 = Uzd3.new(2,5,5)
     assert_equal("Lygiasonis", uzd3.which_triangle)
-  end
+  end 
 end

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+#Testas
 require_relative '3uzd'
 
 puts 'Iveskite trys kraštinės:'

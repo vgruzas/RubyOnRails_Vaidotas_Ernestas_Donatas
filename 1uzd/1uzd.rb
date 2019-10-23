@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'convert'
 puts 'Iveskite dvimacio masyvo eiluciu skaiciu:'
 size = gets.chomp.to_i
 array = Array.new(size) { Array.new(size) }
@@ -13,15 +14,5 @@ size.times do |i|
   end
 end
 puts 'Konvertuotas masyvas:'
-size.times do |i|
-  size.times do |j|
-    array[i][j] = if array[i][j] > array_min.min
-                    'D'
-                  elsif array[i][j] < array_min.min
-                    'M'
-                  else
-                    'L'
-                  end
-  end
-end
-puts(array) & :join
+Convert.new.conversion(size, array_min, array)
+puts(array)
