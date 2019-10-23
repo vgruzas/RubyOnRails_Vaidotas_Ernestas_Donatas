@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'convert'
 puts 'Iveskite dvimacio masyvo eiluciu skaiciu:'
 size = gets.chomp.to_i
