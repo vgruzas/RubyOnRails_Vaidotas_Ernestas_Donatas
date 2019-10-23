@@ -11,5 +11,6 @@ class Convert
                       end
       end
     end
+    array
   end
 end
