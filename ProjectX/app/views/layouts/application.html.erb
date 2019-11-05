@@ -2,20 +2,36 @@
 <html>
   <head>
     <title>ProjectX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
 
   <body>
-  <div class="nav">
-    <%= link_to('Home', '/') %>
-    <%= link_to('About', '/aboutus') %>
+  <div class="w3-bar w3-blue">
+    <%= link_to('Home', '/', {class: 'w3-bar-item w3-button'}) %>
+    <%= link_to('About', '/aboutus',  {class: 'w3-bar-item w3-button w3-hide-small'}) %>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
   </div>
-  <div class="main">
+  <div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium">
+    <%= link_to('About', '/aboutus',  {class: 'w3-bar-item w3-button'}) %>
+  </div>
+  <div class="w3-container">
     <%= yield %>
   </div>
+  <script>
+      function myFunction() {
+          var x = document.getElementById("demo");
+          if (x.className.indexOf("w3-show") == -1) {
+              x.className += " w3-show";
+          } else {
+              x.className = x.className.replace(" w3-show", "");
+          }
+      }
+  </script>
   </body>
 </html>
