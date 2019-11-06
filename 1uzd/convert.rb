@@ -12,13 +12,12 @@ class Convert
   end
 
   def compare(arr, array_min)
-    arr = if arr > array_min.min
-            'D'
-          elsif arr < array_min.min
-            'M'
-          else
-            'L'
-          end
-    arr
+    if arr > array_min.min
+      'D'
+    elsif arr < array_min.min
+      'M'
+    else
+      'L'
+    end
   end
 end

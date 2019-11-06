@@ -2,36 +2,47 @@
 <html>
   <head>
     <title>ProjectX</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=3">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
 
   <body>
-  <div class="w3-bar w3-blue">
-    <%= link_to('Home', '/', {class: 'w3-bar-item w3-button'}) %>
-    <%= link_to('About', '/aboutus',  {class: 'w3-bar-item w3-button w3-hide-small'}) %>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+  <div id="page">
+    <div id="header">
+      <div id="logo">
+        <%= image_tag("Dzemperiui.png",  alt: "Dzemperiui", class: "like_image_for_index", height:"60px") %>
+      </div>
+      <div id="navbar">
+        <input type="checkbox" />
+        <div id="spans"><span></span><span></span><span></span></div>
+        <%= link_to('Home', '/', {id: is_active('main', 'home')}) %>
+        <%= link_to('Gallery', '/') %>
+        <%= link_to('Ask Us', '/') %>
+        <%= link_to('Contacts', '/contacts', {id: is_active('main', 'contacts')}) %>
+      </div>
+    </div>
+    <div id="vieta_reklamai">
+      <%= image_tag("v-ads.jpg",  alt: "reklama") %>
+    </div>
+    <div id="sponsoriai">
+      <h3>Sponsored by:</h3>
+        <div class="images">
+          <%= image_tag("logo2.png",  alt: "Dzemperiui") %>
+          <%= image_tag("logo3.png",  alt: "Dzemperiui") %>
+          <%= image_tag("logo1.png",  alt: "Dzemperiui") %>
+          <%= image_tag("logo4.png", alt: "Dzemperiui") %>
+        </div>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <p> <%= @authors %> &copy 2019 m.</p>
+    </div>
   </div>
-  <div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium">
-    <%= link_to('About', '/aboutus',  {class: 'w3-bar-item w3-button'}) %>
-  </div>
-  <div class="w3-container">
-    <%= yield %>
-  </div>
-  <script>
-      function myFunction() {
-          var x = document.getElementById("demo");
-          if (x.className.indexOf("w3-show") == -1) {
-              x.className += " w3-show";
-          } else {
-              x.className = x.className.replace(" w3-show", "");
-          }
-      }
-  </script>
   </body>
 </html>

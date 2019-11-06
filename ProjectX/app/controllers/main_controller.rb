@@ -1,6 +1,9 @@
 class MainController < ApplicationController
-  def index
+
+  def contacts
   end
-  def about
+
+  def home
   end
+
 end
