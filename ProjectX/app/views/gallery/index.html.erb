@@ -1,0 +1,13 @@
+<h2>Hoodies gallery</h2>
+<p>Each product is original and completely chosen by the customer. Our technology relies on two main objects - choosing a hoodie and designing details on it.
+  <br>
+  <br>
+  <br>
+</p>
+<ul>
+  <% @images.each do |image| %>
+    <li>
+    <%= image_tag "gallery/#{image.split('/').last}", :alt => "gallery/#{image.split('/').last}", width:"200px"%>
+    </li>
+  <% end %>
+</ul>

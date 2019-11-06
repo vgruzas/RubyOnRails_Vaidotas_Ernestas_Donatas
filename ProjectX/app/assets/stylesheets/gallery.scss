@@ -1,0 +1,48 @@
+// Place all the styles related to the gallery controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#logo img {
+  object-fit: fill;
+  height: 60px;
+  width: auto;
+}
+
+img {
+  object-fit: cover;
+  width: 200px;
+  height: 250px;
+}
+
+h2 {
+  text-align: center;
+  padding: 5px;
+}
+
+ul {
+  padding-right: 40px;
+  justify-content: center;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  margin: 5.741%;
+  margin-top: 5px;
+}
+
+#content p {
+  margin: 0;
+}
+
+#sponsoriai img {
+  width: 150px;
+  height: auto;
+  object-fit: fill;
+}
+
+#content p {
+  margin-left: 15%;
+  margin-right: 15%;
+  line-height: 20pt;
+}
