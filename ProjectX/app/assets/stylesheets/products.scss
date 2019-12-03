@@ -1,0 +1,39 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#content {
+ width: 60%!important;
+}
+#content a {
+  width: 100%;
+}
+#content h2 {
+  left: 0px;
+  text-align: center;
+}
+
+
+h2 {
+  padding: 5px;
+}
+
+#content p {
+  margin-left: 15%;
+  margin-right: 15%;
+  line-height: 20pt;
+}
+
+#map {
+  display: block;
+  margin: auto;
+  width: 65%;
+}
+
+@media screen and (max-width: 960px) {
+  #map {
+    display: block;
+    margin: auto;
+    width: 90%;
+  }
+}
