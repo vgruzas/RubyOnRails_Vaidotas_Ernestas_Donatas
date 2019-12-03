@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
 <table>
+  <%= form_tag products_path, :method => 'get' do %>
+    <p id="search">
+      <%= text_field_tag :name %>
+      <%= submit_tag 'Search' %>
+    </p>
+  <% end %>
   <thead>
     <tr>
       <th>Name</th>

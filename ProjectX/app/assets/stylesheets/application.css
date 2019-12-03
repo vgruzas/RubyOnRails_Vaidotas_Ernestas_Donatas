@@ -57,13 +57,19 @@ body {
 }
 
 a {
-    float: left;
-    padding: 14px 0px;
-    color: black!important;
-    text-decoration: none;
-    font-size: 17px;
-    width: 15%;
-    text-align: center;
+     float: left;
+     padding: 14px 0px;
+     color: black!important;
+     text-decoration: none;
+     font-size: 17px;
+     width: 15%;
+     text-align: center;
+}
+.actions input {
+    width: 100%;
+}
+#content table a {
+    width: 80px;
 }
 
 a:hover {
@@ -149,7 +155,7 @@ a#active:hover {
     min-height: 498px;
 }
 
-.actions input, #content a, #button1 {
+#search input:not(#name), .actions input, #content a, #button1 {
     color: black;
     background-color: #a2d6de;
     border: 0px solid black;
@@ -158,7 +164,14 @@ a#active:hover {
     font-weight: 600;
     padding: 14px 0px;
 }
-
+#search {
+    float: right;
+    padding: 10px;
+    margin: 0px!important;
+}
+#search input:not(#name) {
+    padding: 1px 10px;
+}
 .actions input:hover, #content a:hover, #button1:hover {
     background-color: #555555;
     color: white;
