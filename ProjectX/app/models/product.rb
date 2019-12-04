@@ -4,7 +4,7 @@ class Product < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :title, :image, presence: true
+  validates :name, :image, presence: true
   validate :validate_new_product
 
   def self.search(search)
@@ -15,7 +15,7 @@ class Product < ApplicationRecord
   private
 
   def validate_new_product
-    errors.add(:title, I18n.t('Product_title_must_be_shorter')) if title.size > 30
+    errors.add(:name, 'Product_name_must_be_shorter') if name.size > 30
   end
 
 end
