@@ -4,8 +4,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    if params[:name]
-      @products = Product.where('name LIKE ?', "%#{params[:name]}%")
+
+    if params[:search]
+      @products = Product.search(params[:search])
     else
       @products = Product.all
     end
@@ -73,6 +74,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :url)
+      params.require(:product).permit(:name, :url, :image)
     end
 end

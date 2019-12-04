@@ -2,16 +2,16 @@
 
 <h1>Products</h1>
 <table>
-  <%= form_tag products_path, :method => 'get' do %>
-    <p id="search">
-      <%= text_field_tag :name %>
-      <%= submit_tag 'Search' %>
-    </p>
+  <%= form_tag(products_path, method: :get) do %>
+    Product <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag 'Search' %>
   <% end %>
+
   <thead>
     <tr>
       <th>Name</th>
       <th>Url</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,6 +21,7 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.url %></td>
+        <td><%= product.image %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
