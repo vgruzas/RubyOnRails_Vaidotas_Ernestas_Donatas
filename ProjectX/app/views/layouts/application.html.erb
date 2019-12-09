@@ -27,6 +27,7 @@
         <%= link_to('Products', '/products', {id: is_active('products', 'index')}) %>
         <%= link_to('Contacts', '/contacts', {id: is_active('main', 'contacts')}) %>
         <% if current_user %>
+          <%= link_to "Users", users_path %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path %>
@@ -34,6 +35,7 @@
         <% end %>
         <% if admin? %>
           <%= link_to "Edit user", edit_user_registration_path %>
+
         <% end %>
       </div>
     </div>

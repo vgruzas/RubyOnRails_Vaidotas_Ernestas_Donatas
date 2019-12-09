@@ -12,4 +12,9 @@ class ApplicationController < ActionController::Base
     current_user && current_user.is_super == true
   end
 
+  def is_super?
+    flash[:notice] = 'Access_Denied'
+    redirect_back fallback_location: root_path unless admin?
+  end
+
 end

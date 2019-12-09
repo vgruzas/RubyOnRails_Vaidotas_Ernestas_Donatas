@@ -80,8 +80,5 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :url, :image)
     end
 
-  def is_super?
-    flash[:notice] = 'Access_Denied'
-    redirect_back fallback_location: root_path unless admin?
-  end
+
 end
