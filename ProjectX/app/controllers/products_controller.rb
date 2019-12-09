@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :is_super?, only: [:new]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -76,4 +79,9 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :url, :image)
     end
+
+  def is_super?
+    flash[:notice] = 'Access_Denied'
+    redirect_back fallback_location: root_path unless admin?
+  end
 end

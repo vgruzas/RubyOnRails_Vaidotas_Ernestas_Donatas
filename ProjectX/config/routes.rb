@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users , :controllers => {registrations: 'registrations'}
+  resources :users
   resources :products
   get 'contacts', to: 'main#contacts'
   get 'gallery', to: 'gallery#index'

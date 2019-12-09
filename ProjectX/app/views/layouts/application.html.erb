@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   <div id="page">
     <div id="header">
       <div id="logo">
@@ -23,6 +26,15 @@
         <%= link_to('Gallery', '/gallery', {id: is_active('gallery', 'index')}) %>
         <%= link_to('Products', '/products', {id: is_active('products', 'index')}) %>
         <%= link_to('Contacts', '/contacts', {id: is_active('main', 'contacts')}) %>
+        <% if current_user %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+        <% if admin? %>
+          <%= link_to "Edit user", edit_user_registration_path %>
+        <% end %>
       </div>
     </div>
     <div id="vieta_reklamai">
