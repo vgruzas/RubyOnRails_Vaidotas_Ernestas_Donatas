@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_185914) do
+ActiveRecord::Schema.define(version: 2019_12_15_151821) do
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "products", options: "ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_bin", force: :cascade do |t|
     t.string "name"
-    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_bin", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

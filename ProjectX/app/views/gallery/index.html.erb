@@ -5,9 +5,10 @@
   <br>
 </p>
 <ul>
-  <% @images.each do |image| %>
+  <% @products.each do |product| %>
     <li>
-    <%= image_tag "gallery/#{image.split('/').last}", :alt => "gallery/#{image.split('/').last}", width:"200px"%>
+      <%= image_tag ("#{product.image}"), width:"200px"%>
+      <p><%= product.name %></p>
     </li>
   <% end %>
 </ul>

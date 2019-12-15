@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>ProjectX</title>
-    <meta name="viewport" content="width=device-width, initial-scale=3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -24,36 +24,25 @@
         <div id="spans"><span></span><span></span><span></span></div>
         <%= link_to('Home', '/', {id: is_active('main', 'home')}) %>
         <%= link_to('Gallery', '/gallery', {id: is_active('gallery', 'index')}) %>
-        <%= link_to('Products', '/products', {id: is_active('products', 'index')}) %>
         <%= link_to('Contacts', '/contacts', {id: is_active('main', 'contacts')}) %>
         <% if current_user %>
+          <%= link_to('Products', '/products', {id: is_active('products', 'index')}) %>
           <%= link_to "Users", users_path %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path %>
           <%= link_to "Login", new_user_session_path %>
         <% end %>
         <% if admin? %>
+          <%= link_to "Sign up", new_user_registration_path %>
           <%= link_to "Edit user", edit_user_registration_path %>
 
         <% end %>
       </div>
     </div>
-    <div id="vieta_reklamai">
-      <%= image_tag("v-ads.jpg",  alt: "reklama") %>
-    </div>
-    <div id="sponsoriai">
-      <h3>Sponsored by:</h3>
-        <div class="images">
-          <%= image_tag("logo2.png",  alt: "Dzemperiui") %>
-          <%= image_tag("logo3.png",  alt: "Dzemperiui") %>
-          <%= image_tag("logo1.png",  alt: "Dzemperiui") %>
-          <%= image_tag("logo4.png", alt: "Dzemperiui") %>
-        </div>
-    </div>
-    <div id="content">
-      <%= yield %>
-    </div>
+            <div id="content">
+              <%= yield %>
+            </div>
+          </div>
     <div id="footer">
       <p> <%= @authors %> &copy 2019 m.</p>
     </div>
