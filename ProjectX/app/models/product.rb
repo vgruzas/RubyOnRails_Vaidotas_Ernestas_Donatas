@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 
   validates :name, :image, presence: true
   validate :validate_new_product
-
+  belongs_to :user
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
   end
