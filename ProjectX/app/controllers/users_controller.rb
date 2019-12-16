@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :is_super?, only: [:new, :edit, :update, :destroy]
+  before_action :is_super?, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
