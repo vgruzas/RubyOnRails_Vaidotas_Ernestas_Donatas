@@ -19,9 +19,7 @@
       <td><%= user.is_super %></td>
       <td><%= user.firstname %></td>
       <td><%= user.lastname %></td>
-      <% if admin? %>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <% end %>
       <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
@@ -29,4 +27,6 @@
 </table>
 
 <br>
+
+<td><%= link_to 'New', new_user_path %></td>
 
