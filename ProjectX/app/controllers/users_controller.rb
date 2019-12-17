@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :is_super?, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :super?, only: [:index, :new, :create,
+                                :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
@@ -16,7 +17,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user,
+                                  notice: 'User was successfully created.' }
       else
         format.html { render :new }
       end
@@ -24,12 +26,14 @@ class UsersController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_path,
+                                  notice: 'User was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -39,18 +43,20 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url,
+                                notice: 'User was successfully destroyed.' }
     end
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user= User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:email, :username, :is_super, :email, :firstname, :lastname)
+    params.require(:user).permit(:email, :username, :is_super,
+                                 :email, :firstname, :lastname)
   end
 end

@@ -156,22 +156,17 @@ a#active:hover {
     min-height: 498px;
 }
 
-#search input:not(#name), .actions input, #content a, #button1 {
+#searchform input:not(#search), .actions input, #content a, #button1 {
     color: black;
     background-color: #a2d6de;
-    border: 0px solid black;
+    border: 0 solid black;
     font-family: Helvetica;
     font-size: 16px;
     font-weight: 600;
-    padding: 14px 0px;
+    padding: 14px 0;
 }
-#search {
-    float: right;
-    padding: 10px;
-    margin: 0px!important;
-}
-#search input:not(#name) {
-    padding: 1px 10px;
+#searchform input:not(#search) {
+    padding: 1px 14px;
 }
 .actions input:hover, #content a:hover, #button1:hover {
     background-color: #555555;

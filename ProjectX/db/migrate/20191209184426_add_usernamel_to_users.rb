@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# :nodoc:
 class AddUsernamelToUsers < ActiveRecord::Migration[6.0]
   def change
     add_index :users, :username, unique: true

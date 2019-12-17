@@ -1,6 +1,8 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
-  devise_for :users , :controllers => {registrations: 'registrations'}
+# :nodoc:
+Rails.application.routes.draw do
+  devise_for :users, controllers: { registrations: 'registrations' }
   resources :users
   resources :products
   get 'contacts', to: 'main#contacts'

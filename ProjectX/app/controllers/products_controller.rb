@@ -1,5 +1,7 @@
-class ProductsController < ApplicationController
+# frozen_string_literal: true
 
+# :nodoc:
+class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   before_action :set_product, only: [:show, :edit, :update, :destroy]
@@ -7,17 +9,17 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-
     if params[:search]
-      @products = Product.search(params[:search])
+      return @products = Product.search(params[:search])
     else
-      @products = Product.all
+      return @products = Product.all
     end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+
   end
 
   # GET /products/new
@@ -27,6 +29,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+
   end
 
   # POST /products
@@ -36,11 +39,13 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product,
+                                  notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.json { render json: @product.errors,
+                             status: :unprocessable_entity }
       end
     end
   end
@@ -50,11 +55,13 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product,
+                                  notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.json { render json: @product.errors,
+                             status: :unprocessable_entity }
       end
     end
   end
@@ -64,21 +71,20 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to products_url,
+                                notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:name, :image)
-    end
-
-
+  def product_params
+    params.require(:product).permit(:name, :image)
+  end
 end

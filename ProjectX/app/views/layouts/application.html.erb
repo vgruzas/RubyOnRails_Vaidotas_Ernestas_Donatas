@@ -22,19 +22,19 @@
       <div id="navbar">
         <input type="checkbox" />
         <div id="spans"><span></span><span></span><span></span></div>
-        <%= link_to('Home', '/', {id: is_active('main', 'home')}) %>
-        <%= link_to('Gallery', '/gallery', {id: is_active('gallery', 'index')}) %>
-        <%= link_to('Contacts', '/contacts', {id: is_active('main', 'contacts')}) %>
+        <%= link_to('Home', '/', {id: active?('main', 'home')}) %>
+        <%= link_to('Gallery', '/gallery', {id: active?('gallery', 'index')}) %>
+        <%= link_to('Contacts', '/contacts', {id: active?('main', 'contacts')}) %>
         <% if current_user %>
-          <%= link_to('Products', '/products', {id: is_active('products', 'index')}) %>
+          <%= link_to('Products', '/products', {id: active?('products', 'index')}) %>
           <% if admin? %>
-            <%= link_to("Users", users_path, {id: is_active('users', 'index')})%>
-            <%= link_to("Sign up", new_user_registration_path, {id: is_active('registrations', 'new')})%>
+            <%= link_to("Users", users_path, {id: active?('users', 'index')})%>
+            <%= link_to("Sign up", new_user_registration_path, {id: active?('registrations', 'new')})%>
             <% end %>
-          <%= link_to("Edit user", edit_user_registration_path, {id: is_active('registrations', 'edit')}) %>
+          <%= link_to("Edit user", edit_user_registration_path, {id: active?('registrations', 'edit')}) %>
           <%= link_to("Logout", destroy_user_session_path, method: :delete)%>
         <% else %>
-          <%= link_to("Login", new_user_session_path, {id: is_active('devise/sessions', 'new')})%>
+          <%= link_to("Login", new_user_session_path, {id: active?('devise/sessions', 'new')})%>
         <% end %>
       </div>
     </div>

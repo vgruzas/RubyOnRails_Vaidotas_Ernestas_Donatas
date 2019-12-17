@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# :nodoc:
 class EditConfirmationToUser < ActiveRecord::Migration[6.0]
   def change
     rename_column :users, :confirmation_token, :confirmation_token

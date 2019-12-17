@@ -1,9 +1,9 @@
 <h1>Products</h1>
 <table>
   <p><%= form_tag(products_path, method: :get) do %>
-    Product <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag 'Search' %>
-    <% end %></p>
+    <div id="searchform"><%= text_field_tag :search, params[:search] %><%= submit_tag 'Search' %></div>
+    <% end %>
+  </p>
 
   <thead>
     <tr>

@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
+# :nodoc:
 class RegistrationsController < Devise::RegistrationsController
 
-  before_action :is_super?, only: [:new]
+  before_action :super?, only: [:new]
 
   skip_before_action :require_no_authentication, only: [:new, :create, :cancel]
 
