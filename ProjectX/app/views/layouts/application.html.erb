@@ -26,25 +26,16 @@
         <%= link_to('Gallery', '/gallery', {id: is_active('gallery', 'index')}) %>
         <%= link_to('Contacts', '/contacts', {id: is_active('main', 'contacts')}) %>
         <% if current_user %>
-<!-- <<<<<<< HEAD -->
           <%= link_to('Products', '/products', {id: is_active('products', 'index')}) %>
-<!-- ======= -->
           <% if admin? %>
-<!-- >>>>>>> 189f2988d744202af3e0a0e8665fddbbabd9498d -->
-          <%= link_to "Users", users_path %>
+            <%= link_to("Users", users_path, {id: is_active('users', 'index')})%>
+            <%= link_to("Sign up", new_user_registration_path, {id: is_active('registrations', 'new')})%>
             <% end %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to("Edit user", edit_user_registration_path, {id: is_active('registrations', 'edit')}) %>
+          <%= link_to("Logout", destroy_user_session_path, method: :delete)%>
         <% else %>
-          <%= link_to "Login", new_user_session_path %>
+          <%= link_to("Login", new_user_session_path, {id: is_active('devise/sessions', 'new')})%>
         <% end %>
-<!-- <<<<<<< HEAD -->
-        <% if admin? %>
-          <%= link_to "Sign up", new_user_registration_path %>
-          <%= link_to "Edit user", edit_user_registration_path %>
-
-        <% end %>
-<!-- =======
->>>>>>> 189f2988d744202af3e0a0e8665fddbbabd9498d -->
       </div>
     </div>
             <div id="content">
