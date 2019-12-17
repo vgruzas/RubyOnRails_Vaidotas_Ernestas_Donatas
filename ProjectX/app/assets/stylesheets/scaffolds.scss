@@ -63,3 +63,10 @@ div.actions {
 
 label {
   display: block; }
+
+.notice, .alert {
+  padding-top: 200px;
+  float: left;
+  z-index: 1;
+  position: absolute;
+}
